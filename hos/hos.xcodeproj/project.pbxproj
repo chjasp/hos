@@ -13,6 +13,9 @@
 		CDB5571F295B0050003B4549 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB5571E295B0050003B4549 /* Preview Assets.xcassets */; };
 		CDB55726295B00AA003B4549 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55725295B00AA003B4549 /* HealthStore.swift */; };
 		CDB5572A295B109B003B4549 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB55729295B109B003B4549 /* HealthKit.framework */; };
+		CDF5B685295C52C700DD8A61 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B684295C52C700DD8A61 /* ListView.swift */; };
+		CDF5B688295C546F00DD8A61 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B687295C546F00DD8A61 /* ListRowView.swift */; };
+		CDF5B68A295C560300DD8A61 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B689295C560300DD8A61 /* AddView.swift */; };
 		CDF853C2295B238A00D1D3C0 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853C1295B238A00D1D3C0 /* Step.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,9 @@
 		CDB55725295B00AA003B4549 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		CDB55727295B109B003B4549 /* hos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hos.entitlements; sourceTree = "<group>"; };
 		CDB55729295B109B003B4549 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		CDF5B684295C52C700DD8A61 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CDF5B687295C546F00DD8A61 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		CDF5B689295C560300DD8A61 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CDF853C1295B238A00D1D3C0 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,10 +66,11 @@
 		CDB55716295B0050003B4549 /* hos */ = {
 			isa = PBXGroup;
 			children = (
+				CDF5B686295C52F500DD8A61 /* Archive */,
+				CDF5B683295C52B400DD8A61 /* Views */,
 				CDF853C0295B237E00D1D3C0 /* Model */,
 				CDB55727295B109B003B4549 /* hos.entitlements */,
 				CDB55717295B0050003B4549 /* hosApp.swift */,
-				CDB55719295B0050003B4549 /* ContentView.swift */,
 				CDB5571B295B0050003B4549 /* Assets.xcassets */,
 				CDB5571D295B0050003B4549 /* Preview Content */,
 				CDB55725295B00AA003B4549 /* HealthStore.swift */,
@@ -85,6 +92,24 @@
 				CDB55729295B109B003B4549 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDF5B683295C52B400DD8A61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDF5B684295C52C700DD8A61 /* ListView.swift */,
+				CDF5B687295C546F00DD8A61 /* ListRowView.swift */,
+				CDF5B689295C560300DD8A61 /* AddView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CDF5B686295C52F500DD8A61 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				CDB55719295B0050003B4549 /* ContentView.swift */,
+			);
+			path = Archive;
 			sourceTree = "<group>";
 		};
 		CDF853C0295B237E00D1D3C0 /* Model */ = {
@@ -165,10 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF5B68A295C560300DD8A61 /* AddView.swift in Sources */,
 				CDB5571A295B0050003B4549 /* ContentView.swift in Sources */,
 				CDF853C2295B238A00D1D3C0 /* Step.swift in Sources */,
+				CDF5B685295C52C700DD8A61 /* ListView.swift in Sources */,
 				CDB55726295B00AA003B4549 /* HealthStore.swift in Sources */,
 				CDB55718295B0050003B4549 /* hosApp.swift in Sources */,
+				CDF5B688295C546F00DD8A61 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
