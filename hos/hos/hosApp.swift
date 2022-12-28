@@ -1,17 +1,21 @@
-//
-//  hosApp.swift
-//  hos
-//
-//  Created by Christoph Jasper on 27.12.22.
-//
-
 import SwiftUI
+
+/*
+ MVVM architecture
+ 
+ Model - data point
+ View - UI
+ ViewModel - manages models for view
+ 
+ */
 
 @main
 struct hosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ListView()
+            }
         }
     }
 }
