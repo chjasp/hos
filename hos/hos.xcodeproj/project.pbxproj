@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD3C0C91295E4130008C4AE5 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C0C90295E4130008C4AE5 /* ItemModel.swift */; };
 		CDB55718295B0050003B4549 /* hosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55717295B0050003B4549 /* hosApp.swift */; };
 		CDB5571A295B0050003B4549 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55719295B0050003B4549 /* ContentView.swift */; };
 		CDB5571C295B0050003B4549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB5571B295B0050003B4549 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD3C0C90295E4130008C4AE5 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		CDB55714295B0050003B4549 /* hos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB55717295B0050003B4549 /* hosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hosApp.swift; sourceTree = "<group>"; };
 		CDB55719295B0050003B4549 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD3C0C8F295E4118008C4AE5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD3C0C90295E4130008C4AE5 /* ItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CDB5570B295B0050003B4549 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		CDB55716295B0050003B4549 /* hos */ = {
 			isa = PBXGroup;
 			children = (
+				CD3C0C8F295E4118008C4AE5 /* Models */,
 				CDF5B686295C52F500DD8A61 /* Archive */,
 				CDF5B683295C52B400DD8A61 /* Views */,
 				CDF853C0295B237E00D1D3C0 /* Model */,
@@ -192,6 +203,7 @@
 			files = (
 				CDF5B68A295C560300DD8A61 /* AddView.swift in Sources */,
 				CDB5571A295B0050003B4549 /* ContentView.swift in Sources */,
+				CD3C0C91295E4130008C4AE5 /* ItemModel.swift in Sources */,
 				CDF853C2295B238A00D1D3C0 /* Step.swift in Sources */,
 				CDF5B685295C52C700DD8A61 /* ListView.swift in Sources */,
 				CDB55726295B00AA003B4549 /* HealthStore.swift in Sources */,
