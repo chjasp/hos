@@ -2,19 +2,18 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var items: [String] = [
-        "First title",
-        "Second title",
-        "Third title"
+    @State var items: [ItemModel] = [
+        ItemModel(title: "first", isCompleted: false),
+        ItemModel(title: "second", isCompleted: true),
+        ItemModel(title: "third", isCompleted: false),
     ]
     
     var body: some View {
         List {
-            ForEach(items, id: \.self) { item in
-                ListRowView(title: item)
+            ForEach(items) { item in
+                ListRowView(item: item)
             }
         }
-        // check
         .listStyle(PlainListStyle())
         .navigationTitle("Todo List 📝")
         .navigationBarItems(leading: EditButton(), trailing: NavigationLink("Add", destination: AddView()))
