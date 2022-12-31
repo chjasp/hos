@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD3C0C91295E4130008C4AE5 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C0C90295E4130008C4AE5 /* ItemModel.swift */; };
 		CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */; };
+		CD5D5BF22960813300B73C6C /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BF12960813300B73C6C /* NoItemsView.swift */; };
 		CDB55718295B0050003B4549 /* hosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55717295B0050003B4549 /* hosApp.swift */; };
 		CDB5571A295B0050003B4549 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55719295B0050003B4549 /* ContentView.swift */; };
 		CDB5571C295B0050003B4549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB5571B295B0050003B4549 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		CD3C0C90295E4130008C4AE5 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		CD5D5BF12960813300B73C6C /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 		CDB55714295B0050003B4549 /* hos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB55717295B0050003B4549 /* hosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hosApp.swift; sourceTree = "<group>"; };
 		CDB55719295B0050003B4549 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				CDF5B684295C52C700DD8A61 /* ListView.swift */,
 				CDF5B687295C546F00DD8A61 /* ListRowView.swift */,
 				CDF5B689295C560300DD8A61 /* AddView.swift */,
+				CD5D5BF12960813300B73C6C /* NoItemsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				CDB5571A295B0050003B4549 /* ContentView.swift in Sources */,
 				CD3C0C91295E4130008C4AE5 /* ItemModel.swift in Sources */,
 				CDF853C2295B238A00D1D3C0 /* Step.swift in Sources */,
+				CD5D5BF22960813300B73C6C /* NoItemsView.swift in Sources */,
 				CDF5B685295C52C700DD8A61 /* ListView.swift in Sources */,
 				CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */,
 				CDB55726295B00AA003B4549 /* HealthStore.swift in Sources */,
