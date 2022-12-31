@@ -1,11 +1,5 @@
-//
-//  AddView.swift
-//  hos
-//
-//  Created by Christoph Jasper on 28.12.22.
-//
-
 import SwiftUI
+
 
 struct AddView: View {
     
@@ -16,21 +10,39 @@ struct AddView: View {
     @State var alertTitle: String = ""
     @State var showAlert: Bool = false
     
+    let secondaryAccentColor = Color("SecondaryAccentColor")
+    
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     
     var body: some View {
         ScrollView {
             VStack {
-                TextField("Type something here...", text: $textFieldText)
-                    .padding(.horizontal)
-                    .frame(height: 55)
-                    .background(Color.gray)
-                    .cornerRadius(10)
+                
+                ZStack(alignment: .leading) {
+                    if textFieldText.isEmpty {
+                        Text("Type Here")
+                            .foregroundColor(.white.opacity(0.7))
+                        
+                    }
+                    TextField("", text: $textFieldText)
+                        .foregroundColor(.white)
+                }
+                .padding(.horizontal)
+                .frame(height: 55)
+                .background(secondaryAccentColor.opacity(0.2))
+                .foregroundColor(.green)
+                .cornerRadius(10)
+                .padding(.bottom, 10)
                 
                 Button(action: {
                     saveButtonPressed()
                 }, label: {
                     Text("Save".uppercased())
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .font(.headline)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
@@ -41,6 +53,7 @@ struct AddView: View {
             .padding(14)
         }
         .navigationTitle("Add an item 🖊️")
+        .background(.black)
         .alert(isPresented: $showAlert, content: getAlert)
     }
     
