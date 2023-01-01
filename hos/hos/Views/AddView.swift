@@ -11,6 +11,7 @@ struct AddView: View {
     @State var showAlert: Bool = false
     
     let secondaryAccentColor = Color("SecondaryAccentColor")
+    let accentGrey = Color("AccentGrey")
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
@@ -33,8 +34,7 @@ struct AddView: View {
                 }
                 .padding(.horizontal)
                 .frame(height: 55)
-                .background(secondaryAccentColor.opacity(0.2))
-                .foregroundColor(.green)
+                .background(accentGrey.opacity(0.2))
                 .cornerRadius(10)
                 .padding(.bottom, 10)
                 
