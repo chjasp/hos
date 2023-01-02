@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD116EF02962FFE800270467 /* ListRowView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD116EEF2962FFE800270467 /* ListRowView2.swift */; };
+		CD116EF229633CB600270467 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD116EF129633CB600270467 /* RoutineView.swift */; };
+		CD116EF429633EBA00270467 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD116EF329633EBA00270467 /* ChartView.swift */; };
 		CD3C0C91295E4130008C4AE5 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C0C90295E4130008C4AE5 /* ItemModel.swift */; };
 		CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */; };
 		CD5D5BF22960813300B73C6C /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BF12960813300B73C6C /* NoItemsView.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD116EEF2962FFE800270467 /* ListRowView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView2.swift; sourceTree = "<group>"; };
+		CD116EF129633CB600270467 /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
+		CD116EF329633EBA00270467 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		CD3C0C90295E4130008C4AE5 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		CD5D5BF12960813300B73C6C /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 				CDF5B687295C546F00DD8A61 /* ListRowView.swift */,
 				CDF5B689295C560300DD8A61 /* AddView.swift */,
 				CD5D5BF12960813300B73C6C /* NoItemsView.swift */,
+				CD116EEF2962FFE800270467 /* ListRowView2.swift */,
+				CD116EF129633CB600270467 /* RoutineView.swift */,
+				CD116EF329633EBA00270467 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,13 +225,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF5B68A295C560300DD8A61 /* AddView.swift in Sources */,
+				CD116EF429633EBA00270467 /* ChartView.swift in Sources */,
 				CDB5571A295B0050003B4549 /* ContentView.swift in Sources */,
 				CD3C0C91295E4130008C4AE5 /* ItemModel.swift in Sources */,
 				CDF853C2295B238A00D1D3C0 /* Step.swift in Sources */,
 				CD5D5BF22960813300B73C6C /* NoItemsView.swift in Sources */,
+				CD116EF02962FFE800270467 /* ListRowView2.swift in Sources */,
 				CDF5B685295C52C700DD8A61 /* ListView.swift in Sources */,
 				CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */,
 				CDB55726295B00AA003B4549 /* HealthStore.swift in Sources */,
+				CD116EF229633CB600270467 /* RoutineView.swift in Sources */,
 				CDB55718295B0050003B4549 /* hosApp.swift in Sources */,
 				CDF5B688295C546F00DD8A61 /* ListRowView.swift in Sources */,
 			);

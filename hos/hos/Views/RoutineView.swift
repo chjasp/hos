@@ -1,12 +1,12 @@
 import SwiftUI
 import UIKit
 
-enum Sections: String, CaseIterable {
-    case routine = "Routine Activities"
-    case notRoutine = "Other Activities"
+enum RoutineSections: String, CaseIterable {
+    case open = "Open Activities"
+    case finished = "Finished Activities"
 }
 
-struct ListView: View {
+struct RoutineView: View {
     
     init() {
         UITableView.appearance().backgroundColor = .clear
@@ -20,11 +20,11 @@ struct ListView: View {
     let accentGreyDark = Color("AccentGreyDark")
     let backgroundGrey = Color("BackgroundGrey")
     
-    var routineActivities: [ItemModel] {
+    var openActivities: [ItemModel] {
         listViewModel.items.filter { $0.isRoutine }
     }
     
-    var otherActivities: [ItemModel] {
+    var finishedActivities: [ItemModel] {
         listViewModel.items.filter { !$0.isRoutine }
     }
     
@@ -36,11 +36,11 @@ struct ListView: View {
             } else {
                 List {
                     
-                    ForEach(Sections.allCases, id: \.self) { section in
+                    ForEach(RoutineSections.allCases, id: \.self) { section in
                         
                         Section {
                             
-                            let filteredActivities = section == .routine ? routineActivities : otherActivities
+                            let filteredActivities = section == .open ? openActivities : finishedActivities
                             
                             
                             ForEach(filteredActivities) { item in
@@ -51,7 +51,6 @@ struct ListView: View {
                                         }
                                     }
                                     .listRowInsets(EdgeInsets())
-                                    //.listRowSeparatorTint(accentGrey)
                                     .listRowSeparator(.hidden)
                                     .listRowBackground(Color.clear)
                                     .cornerRadius(10)
@@ -79,10 +78,10 @@ struct ListView: View {
     }
 }
 
-struct ListView_Previews: PreviewProvider {
+struct RoutineView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ListView()
+            RoutineView()
         }
         .environmentObject(ListViewModel())
     }

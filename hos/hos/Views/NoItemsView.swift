@@ -4,6 +4,7 @@ struct NoItemsView: View {
     
     @State var animate: Bool = false
     let secondaryAccentColor = Color("SecondaryAccentColor")
+    let backgroundGrey = Color("BackgroundGrey")
     
     var body: some View {
         ScrollView {
@@ -18,7 +19,7 @@ struct NoItemsView: View {
                 NavigationLink(destination: AddView(),
                                label: {
                     Text("Add Something")
-                        .foregroundColor(.black)
+                        .foregroundColor(backgroundGrey)
                         .font(.headline)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
@@ -37,7 +38,7 @@ struct NoItemsView: View {
             .padding(40)
             .onAppear(perform: addAnimation)
         }
-        .background(.black)
+        .background(backgroundGrey)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
