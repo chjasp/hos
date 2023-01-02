@@ -4,16 +4,16 @@ struct ItemModel: Identifiable, Codable {
     
     let id: String
     let title: String
-    let isCompleted: Bool
+    let isRoutine: Bool
     
-    init(id: String = UUID().uuidString, title: String, isCompleted: Bool) {
+    init(id: String = UUID().uuidString, title: String, isRoutine: Bool) {
         self.id = id
         self.title = title
-        self.isCompleted = isCompleted
+        self.isRoutine = isRoutine
     }
     
     func updateCompletion() -> ItemModel {
-        return ItemModel(id: id, title: title, isCompleted: !isCompleted)
+        return ItemModel(id: id, title: title, isRoutine: !isRoutine)
     }
     
 }

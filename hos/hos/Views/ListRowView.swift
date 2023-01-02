@@ -4,11 +4,13 @@ struct ListRowView: View {
     
     let item: ItemModel
     let accentRed = Color("AccentRed")
+    let accentGreen = Color("AccentGreen")
+    let accentGreyDark = Color("AccentGreyDark")
     
     var body: some View {
         HStack {
-            Image(systemName: item.isCompleted ? "minus.circle" : "plus.circle")
-                .foregroundColor(item.isCompleted ? accentRed : Color.accentColor)
+            Image(systemName: item.isRoutine ? "minus.circle" : "plus.circle")
+                .foregroundColor(item.isRoutine ? accentRed : accentGreen)
             Text(item.title)
                 .foregroundColor(.white)
             Spacer()
@@ -16,14 +18,15 @@ struct ListRowView: View {
         .font(.title2)
         .padding(.vertical, 20)
         .padding(.horizontal, 20)
-        .background(.black)
+        .background(LinearGradient(gradient: Gradient(colors: [.black, accentGreyDark]), startPoint: .leading, endPoint: .trailing))
+        //#29292C
     }
 }
 
 struct ListRowView_Previews: PreviewProvider {
     
-    static var item1 = ItemModel(title: "first item", isCompleted: false)
-    static var item2 = ItemModel(title: "second iten", isCompleted: true)
+    static var item1 = ItemModel(title: "first item", isRoutine: false)
+    static var item2 = ItemModel(title: "second iten", isRoutine: true)
     
     static var previews: some View {
         Group {

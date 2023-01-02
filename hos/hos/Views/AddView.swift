@@ -12,6 +12,7 @@ struct AddView: View {
     
     let secondaryAccentColor = Color("SecondaryAccentColor")
     let accentGrey = Color("AccentGrey")
+    let backgroundGrey = Color("BackgroundGrey")
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
@@ -42,7 +43,7 @@ struct AddView: View {
                     saveButtonPressed()
                 }, label: {
                     Text("Save".uppercased())
-                        .foregroundColor(.black)
+                        .foregroundColor(backgroundGrey)
                         .font(.headline)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
@@ -53,7 +54,7 @@ struct AddView: View {
             .padding(14)
         }
         .navigationTitle("Add an item 🖊️")
-        .background(.black)
+        .background(backgroundGrey)
         .alert(isPresented: $showAlert, content: getAlert)
     }
     
