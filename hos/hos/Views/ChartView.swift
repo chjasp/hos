@@ -1,56 +1,80 @@
 import SwiftUI
 
-struct ChartView: View {
+struct Home: View {
     
-    let values: [Int]
-    let labels: [String]
-    let xAxisLabels: [String]
+    let accentGrey = Color("AccentGrey")
+    let accentGreen = Color("AccentGreen")
+    let accentGreyDark = Color("AccentGreyDark")
+    let backgroundGrey = Color("BackgroundGrey")
     
     var body: some View {
-        
-        ZStack {
-            
-            LinearGradient(
-                colors: [Color(red: 16/255, green: 33/255, blue: 80/255), Color(red: 12/255, green: 39/255, blue: 76/255)],
-                startPoint: .top,
-                endPoint: .bottom)
-            .ignoresSafeArea()
-            
-            GeometryReader { geo in
-                
-                HStack(alignment: .bottom) {
+        VStack {
+            HStack {
+                Button {
                     
-                    ForEach(0..<values.count) { idx in
-                        let max = values.max() ?? 0
-                        
-                        VStack {
-                            Text(labels[idx])
-                                .foregroundColor(.white)
-                            
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(Color.white)
-                                .frame(width: 20, height:  CGFloat(values[idx])/CGFloat(max) * geo.size.height * 0.6)
-                            
-                            Text(xAxisLabels[idx])
-                                .font(.caption)
-                                .foregroundColor(.white)
-                        }
-                    }
-                }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                    //.background(Color(red: 21/255, green: 21/255, blue: 21/255))
-                    .cornerRadius(10)
-                    .padding(.bottom, 20)
+                } label: {
+                    Image(systemName: "slider.vertical.3")
+                        .font(.title2)
+                }
+                
+                Spacer()
+                
+                /* Button {
+                    
+                } label: {
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 35, height: 35)
+                        .clipShape(Circle())
+                } */
             }
+            .padding()
+            .foregroundColor(Color.accentColor)
+            
+            VStack(spacing: 10) {
+                
+                Text("Health Score")
+                    .fontWeight(.bold)
+                
+                Text("1546")
+                    .font(.system(size: 38, weight: .bold))
+            }
+            .foregroundColor(Color.accentColor)
+            .padding(.top, 20)
+            
+            Button {
+                
+            } label: {
+                
+                HStack(spacing: 5) {
+                    Text("Day")
+                    
+                    Image(systemName: "chevron.down")
+                }
+                .font(.caption.bold())
+                .padding(.vertical, 10)
+                .padding(.horizontal)
+                .background(LinearGradient(gradient: Gradient(colors: [.black, accentGreyDark]), startPoint: .leading, endPoint: .trailing), in: Capsule())
+                .shadow(color: .black,
+                        radius: 3,
+                        x: 0,
+                        y: 3)
+            }
+            LineGraph(data: samplePlot)
+                .frame(height: 250)
         }
-        }
-    }
-
-struct ChartView_Previews: PreviewProvider {
-    static var previews: some View {
-        let values = [34, 42, 88, 24, 11, 45]
-        let labels = ["1", "2", "3", "4", "5", "6"]
-        let xAxisValues = ["M1","M2","M3","M4","M5","M6"]
-        
-        ChartView(values: values, labels: labels, xAxisLabels: xAxisValues)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(backgroundGrey)
     }
 }
+
+struct Home_Preview: PreviewProvider {
+    static var previews: some View {
+        Home()
+    }
+}
+
+let samplePlot: [CGFloat] = [
+    989, 1000, 560, 673, 456, 853, 643, 746, 735, 245, 245, 846, 666, 333, 888, 333, 555, 777, 785, 657, 889
+]
