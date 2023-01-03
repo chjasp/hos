@@ -51,7 +51,6 @@ struct ListView: View {
                                         }
                                     }
                                     .listRowInsets(EdgeInsets())
-                                    //.listRowSeparatorTint(accentGrey)
                                     .listRowSeparator(.hidden)
                                     .listRowBackground(Color.clear)
                                     .cornerRadius(10)
