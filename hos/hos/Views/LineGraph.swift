@@ -20,14 +20,14 @@ struct LineGraph: View {
 
             let height = proxy.size.height
             let width = (proxy.size.width) / CGFloat(data.count)
-            let maxPoint = (data.max() ?? 0) + 100
+            let maxPoint = (data.max() ?? 0) + 150
             let points = data.enumerated().compactMap { item -> CGPoint in
                 
                 let progress = item.element / maxPoint
                 let pathHeight = progress * height
                 let pathWidth = width * CGFloat(item.offset)
                 
-                return CGPoint(x: pathWidth, y: pathHeight)
+                return CGPoint(x: pathWidth, y: height - pathHeight)
                 
             }
             
@@ -49,6 +49,7 @@ struct LineGraph: View {
             .overlay(
                 // Drag indicator
                 VStack(spacing: 0) {
+                    
                     Text(currentPlot)
                         .font(.caption.bold())
                         .foregroundColor(.white)
@@ -56,11 +57,12 @@ struct LineGraph: View {
                         .padding(.horizontal, 10)
                         .background(accentGreen, in: Capsule())
                         .offset(x: translation < 10 ? 30 : 0)
-                        .offset(x : translation > (proxy.size.width - 60) ? -30 : 0)
-                    
+                        .offset(x: translation > (proxy.size.width - 60) ? -30 : 0)
+                        .offset(y: offset.height < -180 ? 10 : 0)
+                   
                     Rectangle()
                         .fill(accentGreen)
-                        .frame(width: 1, height: 40)
+                        .frame(width: 1, height: 7)
                         .padding(.top)
                     
                     Circle()
@@ -74,7 +76,7 @@ struct LineGraph: View {
                     
                     Rectangle()
                         .fill(accentGreen)
-                        .frame(width: 1, height: 55)
+                        .frame(width: 1, height: 7)
                     
                 }
                     .frame(width: 80, height: 170)
@@ -97,6 +99,9 @@ struct LineGraph: View {
                 currentPlot = "\(data[index])"
                 self.translation = translation
                 
+                let progress = points[index].y / maxPoint
+                let pathHeight = progress * height
+                
                 offset = CGSize(width: points[index].x - 40, height: points[index].y - height)
                 
             }).onEnded({ value in
@@ -114,6 +119,6 @@ struct LineGraph: View {
 
 struct LineGraph_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        HomeView()
     }
 }

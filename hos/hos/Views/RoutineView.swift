@@ -74,7 +74,7 @@ struct RoutineView: View {
                 .background(backgroundGrey)
             }
         }
-        .navigationBarItems(trailing: NavigationLink("Add", destination: AddView()))
+        .navigationBarItems(trailing: NavigationLink("Edit", destination: ListView()))
     }
 }
 
