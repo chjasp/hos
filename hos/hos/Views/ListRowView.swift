@@ -19,7 +19,6 @@ struct ListRowView: View {
         .padding(.vertical, 20)
         .padding(.horizontal, 20)
         .background(LinearGradient(gradient: Gradient(colors: [.black, accentGreyDark]), startPoint: .leading, endPoint: .trailing))
-        //#29292C
     }
 }
 
