@@ -32,7 +32,7 @@ struct Home: View {
             .padding()
             .foregroundColor(Color.accentColor)
             
-            VStack(spacing: 10) {
+            VStack(spacing: 5) {
                 
                 Text("Health Score")
                     .fontWeight(.bold)
@@ -41,7 +41,8 @@ struct Home: View {
                     .font(.system(size: 38, weight: .bold))
             }
             .foregroundColor(Color.accentColor)
-            .padding(.top, 20)
+            //.padding(.top, 20)
+            .padding(.bottom, 2)
             
             Button {
                 
@@ -52,8 +53,9 @@ struct Home: View {
                     
                     Image(systemName: "chevron.down")
                 }
+                .padding(.vertical, 5)
                 .font(.caption.bold())
-                .padding(.vertical, 10)
+
                 .padding(.horizontal)
                 .background(LinearGradient(gradient: Gradient(colors: [.black, accentGreyDark]), startPoint: .leading, endPoint: .trailing), in: Capsule())
                 .shadow(color: .black,
@@ -62,7 +64,12 @@ struct Home: View {
                         y: 3)
             }
             LineGraph(data: samplePlot)
-                .frame(height: 250)
+                .frame(width: 350, height: 250)
+                .shadow(color: .black,
+                        radius: 10,
+                        x: 0.0,
+                        y: 10)
+                .padding(.top, 10)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(backgroundGrey)
@@ -76,5 +83,5 @@ struct Home_Preview: PreviewProvider {
 }
 
 let samplePlot: [CGFloat] = [
-    989, 1000, 560, 673, 456, 853, 643, 746, 735, 245, 245, 846, 666, 333, 888, 333, 555, 777, 785, 657, 889
+    200, 300, 560, 673, 456, 500, 643, 746, 735, 800, 810, 846, 666, 840, 888, 890, 900, 840, 820, 888, 889
 ]
