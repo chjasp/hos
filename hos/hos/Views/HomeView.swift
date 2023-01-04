@@ -11,7 +11,7 @@ struct HomeView: View {
         VStack {
             HStack {
                 Button {
-                    
+                //ListView()
                 } label: {
                     Image(systemName: "slider.vertical.3")
                         .font(.title2)
@@ -23,23 +23,17 @@ struct HomeView: View {
             .padding()
             .foregroundColor(Color.accentColor)
             
-            VStack(spacing: 5) {
-                
-                Text("Health Score")
-                    .fontWeight(.bold)
-                
-                Text("1546")
-                    .font(.system(size: 38, weight: .bold))
-            }
-            .foregroundColor(Color.accentColor)
-            .padding(.bottom, 2)
+            Text("Health Trend")
+                .font(.system(size: 30, weight: .bold))
+                .foregroundColor(Color.accentColor)
+                .padding(.bottom, 2)
             
             Button {
                 
             } label: {
                 
                 HStack(spacing: 5) {
-                    Text("Day")
+                    Text("Week")
                     
                     Image(systemName: "chevron.down")
                 }
@@ -60,6 +54,7 @@ struct HomeView: View {
                         x: 0.0,
                         y: 10)
                 .padding(.top, 10)
+                .padding(.bottom, 15)
             
             RoutineView()
             .environmentObject(ListViewModel())

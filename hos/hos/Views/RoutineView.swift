@@ -30,51 +30,60 @@ struct RoutineView: View {
     
     var body: some View {
         
-        ZStack {
-            if listViewModel.items.isEmpty {
-                NoItemsView()
-            } else {
-                List {
-                    
-                    ForEach(RoutineSections.allCases, id: \.self) { section in
+        
+        VStack {
+            
+            Text("Routine")
+                .font(.system(size: 30, weight: .bold))
+                .foregroundColor(Color.accentColor)
+                .padding(.bottom, 2)
+            
+            ZStack {
+                if listViewModel.items.isEmpty {
+                    NoItemsView()
+                } else {
+                    List {
                         
-                        Section {
+                        ForEach(RoutineSections.allCases, id: \.self) { section in
                             
-                            let filteredActivities = section == .open ? openActivities : finishedActivities
-                            
-                            
-                            ForEach(filteredActivities) { item in
-                                ListRowView(item: item)
-                                    .onTapGesture {
-                                        withAnimation(.linear) {
-                                            listViewModel.updateItem(item: item)
-                                        }
-                                    }
-                                    .listRowInsets(EdgeInsets())
-                                    .listRowSeparator(.hidden)
-                                    .listRowBackground(Color.clear)
-                                    .cornerRadius(10)
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 7)
-                                    .shadow(color: .black,
-                                            radius: 4,
-                                            x: 0.0,
-                                            y: 6)
+                            Section {
                                 
+                                let filteredActivities = section == .open ? openActivities : finishedActivities
+                                
+                                
+                                ForEach(filteredActivities) { item in
+                                    ListRowView(item: item)
+                                        .onTapGesture {
+                                            withAnimation(.linear) {
+                                                listViewModel.updateItem(item: item)
+                                            }
+                                        }
+                                        .listRowInsets(EdgeInsets())
+                                        .listRowSeparator(.hidden)
+                                        .listRowBackground(Color.clear)
+                                        .cornerRadius(10)
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 7)
+                                        .shadow(color: .black,
+                                                radius: 4,
+                                                x: 0.0,
+                                                y: 6)
+                                    
+                                }
+                                .background(.clear)
+                                
+                            } header: {
+                                Text(section.rawValue)
+                                    .foregroundColor(Color.accentColor)
                             }
-                            .background(.clear)
-                            
-                        } header: {
-                            Text(section.rawValue)
-                                .foregroundColor(Color.accentColor)
                         }
                     }
+                    .listStyle(PlainListStyle())
                 }
-                .listStyle(PlainListStyle())
-                .background(backgroundGrey)
             }
+            //.navigationBarItems(trailing: NavigationLink("Edit", destination: ListView()))
         }
-        .navigationBarItems(trailing: NavigationLink("Edit", destination: ListView()))
+        .background(backgroundGrey)
     }
 }
 
