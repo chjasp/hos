@@ -2,11 +2,11 @@ import SwiftUI
 import UIKit
 
 enum RoutineSections: String, CaseIterable {
-    case open = "Open Activities"
-    case finished = "Finished Activities"
+    case open = "Open Pills"
+    case taken = "Taken Pills"
 }
 
-struct RoutineView: View {
+struct Cabinet: View {
     
     init() {
         UITableView.appearance().backgroundColor = .clear
@@ -20,12 +20,12 @@ struct RoutineView: View {
     let accentGreyDark = Color("AccentGreyDark")
     let backgroundGrey = Color("BackgroundGrey")
     
-    var openActivities: [ItemModel] {
-        listViewModel.items.filter { $0.isRoutine }
+    var openPills: [ItemModel] {
+        listViewModel.items.filter { $0.isInCabinet }
     }
     
-    var finishedActivities: [ItemModel] {
-        listViewModel.items.filter { !$0.isRoutine }
+    var takenPills: [ItemModel] {
+        listViewModel.items.filter { !$0.isInCabinet }
     }
     
     var body: some View {
@@ -33,14 +33,14 @@ struct RoutineView: View {
         
         VStack {
             
-            Text("Routine")
+            Text("Cabinet")
                 .font(.system(size: 30, weight: .bold))
                 .foregroundColor(Color.accentColor)
                 .padding(.bottom, 2)
             
             ZStack {
                 if listViewModel.items.isEmpty {
-                    NoItemsView()
+                    NoPills()
                 } else {
                     List {
                         
@@ -48,14 +48,13 @@ struct RoutineView: View {
                             
                             Section {
                                 
-                                let filteredActivities = section == .open ? openActivities : finishedActivities
+                                let filteredPills = section == .open ? openPills : takenPills
                                 
-                                
-                                ForEach(filteredActivities) { item in
-                                    ListRowView(item: item)
+                                ForEach(filteredPills) { item in
+                                    PharmacyRow(item: item)
                                         .onTapGesture {
                                             withAnimation(.linear) {
-                                                listViewModel.updateItem(item: item)
+                                                listViewModel.updateCabinet(item: item)
                                             }
                                         }
                                         .listRowInsets(EdgeInsets())
@@ -87,10 +86,10 @@ struct RoutineView: View {
     }
 }
 
-struct RoutineView_Previews: PreviewProvider {
+struct Cabinet_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RoutineView()
+            Cabinet()
         }
         .environmentObject(ListViewModel())
     }

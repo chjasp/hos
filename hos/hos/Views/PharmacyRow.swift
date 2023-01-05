@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ListRowView: View {
+struct PharmacyRow: View {
     
     let item: ItemModel
     let accentRed = Color("AccentRed")
@@ -9,8 +9,8 @@ struct ListRowView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: item.isRoutine ? "minus.circle" : "plus.circle")
-                .foregroundColor(item.isRoutine ? accentRed : accentGreen)
+            Image(systemName: item.isInCabinet ? "minus.circle" : "plus.circle")
+                .foregroundColor(item.isInCabinet ? accentRed : accentGreen)
             Text(item.title)
                 .foregroundColor(.white)
             Spacer()
@@ -22,15 +22,15 @@ struct ListRowView: View {
     }
 }
 
-struct ListRowView_Previews: PreviewProvider {
+struct PharmacyRow_Previews: PreviewProvider {
     
-    static var item1 = ItemModel(title: "first item", isRoutine: false)
-    static var item2 = ItemModel(title: "second iten", isRoutine: true)
+    static var item1 = ItemModel(title: "first item", isInCabinet: false, hasBeenTaken: false)
+    static var item2 = ItemModel(title: "second iten", isInCabinet: true, hasBeenTaken: true)
     
     static var previews: some View {
         Group {
-            ListRowView(item: item1)
-            ListRowView(item: item2)
+            PharmacyRow(item: item1)
+            PharmacyRow(item: item2)
         }
         .previewLayout(.sizeThatFits)
     }
