@@ -17,7 +17,7 @@ struct hosApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeView()
+                Home()
             }
             .environmentObject(listViewModel)
         }

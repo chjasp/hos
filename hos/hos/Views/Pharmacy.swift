@@ -2,11 +2,11 @@ import SwiftUI
 import UIKit
 
 enum Sections: String, CaseIterable {
-    case routine = "Routine Activities"
-    case notRoutine = "Other Activities"
+    case cabinet = "Cabinet Pills"
+    case notCabinet = "Other Pills"
 }
 
-struct ListView: View {
+struct Pharmacy: View {
     
     init() {
         UITableView.appearance().backgroundColor = .clear
@@ -20,19 +20,19 @@ struct ListView: View {
     let accentGreyDark = Color("AccentGreyDark")
     let backgroundGrey = Color("BackgroundGrey")
     
-    var routineActivities: [ItemModel] {
-        listViewModel.items.filter { $0.isRoutine }
+    var cabinetPills: [ItemModel] {
+        listViewModel.items.filter { $0.isInCabinet }
     }
     
-    var otherActivities: [ItemModel] {
-        listViewModel.items.filter { !$0.isRoutine }
+    var otherPills: [ItemModel] {
+        listViewModel.items.filter { !$0.isInCabinet }
     }
     
     var body: some View {
         
         ZStack {
             if listViewModel.items.isEmpty {
-                NoItemsView()
+                NoPills()
             } else {
                 List {
                     
@@ -40,14 +40,14 @@ struct ListView: View {
                         
                         Section {
                             
-                            let filteredActivities = section == .routine ? routineActivities : otherActivities
+                            let filteredPills = section == .cabinet ? cabinetPills : otherPills
                             
                             
-                            ForEach(filteredActivities) { item in
-                                ListRowView(item: item)
+                            ForEach(filteredPills) { item in
+                                PharmacyRow(item: item)
                                     .onTapGesture {
                                         withAnimation(.linear) {
-                                            listViewModel.updateItem(item: item)
+                                            listViewModel.updateCabinet(item: item)
                                         }
                                     }
                                     .listRowInsets(EdgeInsets())
@@ -74,14 +74,14 @@ struct ListView: View {
                 .background(backgroundGrey)
             }
         }
-        .navigationBarItems(trailing: NavigationLink("Add", destination: AddView()))
+        .navigationBarItems(trailing: NavigationLink("Add", destination: AddPills()))
     }
 }
 
-struct ListView_Previews: PreviewProvider {
+struct Pharmacy_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ListView()
+            Pharmacy()
         }
         .environmentObject(ListViewModel())
     }

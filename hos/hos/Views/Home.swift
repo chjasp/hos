@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct HomeView: View {
+struct Home: View {
     
     let accentGrey = Color("AccentGrey")
     let accentGreen = Color("AccentGreen")
@@ -11,7 +11,7 @@ struct HomeView: View {
         VStack {
             HStack {
                 Button {
-                //ListView()
+                // ListView()
                 } label: {
                     Image(systemName: "slider.vertical.3")
                         .font(.title2)
@@ -23,7 +23,7 @@ struct HomeView: View {
             .padding()
             .foregroundColor(Color.accentColor)
             
-            Text("Health Trend")
+            Text("Mirror")
                 .font(.system(size: 30, weight: .bold))
                 .foregroundColor(Color.accentColor)
                 .padding(.bottom, 2)
@@ -56,7 +56,7 @@ struct HomeView: View {
                 .padding(.top, 10)
                 .padding(.bottom, 15)
             
-            RoutineView()
+            Cabinet()
             .environmentObject(ListViewModel())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -66,7 +66,7 @@ struct HomeView: View {
 
 struct Home_Preview: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        Home()
     }
 }
 

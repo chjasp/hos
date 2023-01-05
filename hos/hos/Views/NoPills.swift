@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct NoItemsView: View {
+struct NoPills: View {
     
     @State var animate: Bool = false
     let secondaryAccentColor = Color("SecondaryAccentColor")
@@ -9,14 +9,14 @@ struct NoItemsView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("There are no items")
+                Text("There are no pills")
                     .font(.title)
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
-                Text("Add activities to your routine. You can also create new activities or delete ones you don't need.")
+                Text("Add pills to your cabinet. You can also create new pills or delete ones you don't need.")
                     .foregroundColor(.white)
                     .padding(.bottom, 20)
-                NavigationLink(destination: AddView(),
+                NavigationLink(destination: AddPills(),
                                label: {
                     Text("Add Something")
                         .foregroundColor(backgroundGrey)
@@ -56,10 +56,10 @@ struct NoItemsView: View {
     
 }
 
-struct NoItemsView_Previews: PreviewProvider {
+struct NoPills_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            NoItemsView()
+            NoPills()
                 .navigationTitle("Title")
         }
     }

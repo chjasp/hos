@@ -119,6 +119,6 @@ struct LineGraph: View {
 
 struct LineGraph_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        Home()
     }
 }

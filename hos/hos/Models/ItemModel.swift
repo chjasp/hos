@@ -4,16 +4,22 @@ struct ItemModel: Identifiable, Codable {
     
     let id: String
     let title: String
-    let isRoutine: Bool
+    let isInCabinet: Bool
+    let hasBeenTaken: Bool
     
-    init(id: String = UUID().uuidString, title: String, isRoutine: Bool) {
+    init(id: String = UUID().uuidString, title: String, isInCabinet: Bool, hasBeenTaken: Bool) {
         self.id = id
         self.title = title
-        self.isRoutine = isRoutine
+        self.isInCabinet = isInCabinet
+        self.hasBeenTaken = hasBeenTaken
     }
     
-    func updateCompletion() -> ItemModel {
-        return ItemModel(id: id, title: title, isRoutine: !isRoutine)
+    func updateCabinet() -> ItemModel {
+        return ItemModel(id: id, title: title, isInCabinet: !isInCabinet, hasBeenTaken: hasBeenTaken)
+    }
+    
+    func updateTakingPill() -> ItemModel {
+        return ItemModel(id: id, title: title, isInCabinet: isInCabinet, hasBeenTaken: !hasBeenTaken)
     }
     
 }

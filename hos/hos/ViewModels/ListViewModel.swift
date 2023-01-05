@@ -32,13 +32,19 @@ class ListViewModel: ObservableObject {
     }
     
     func addItem(title: String) {
-        let newItem = ItemModel(title: title, isRoutine: false)
+        let newItem = ItemModel(title: title, isInCabinet: false, hasBeenTaken: false)
         items.append(newItem)
     }
     
-    func updateItem(item: ItemModel) {
+    func updateCabinet(item: ItemModel) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
-            items[index] = item.updateCompletion()
+            items[index] = item.updateCabinet()
+        }
+    }
+    
+    func updateTakingPill(item: ItemModel) {
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            items[index] = item.updateTakingPill()
         }
     }
     

@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-struct AddView: View {
+struct AddPills: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var listViewModel: ListViewModel
@@ -15,7 +15,6 @@ struct AddView: View {
     let backgroundGrey = Color("BackgroundGrey")
     
     init() {
-        //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
@@ -53,7 +52,7 @@ struct AddView: View {
             }
             .padding(14)
         }
-        .navigationTitle("Add an item 🖊️")
+        .navigationTitle("Add a pill")
         .background(backgroundGrey)
         .alert(isPresented: $showAlert, content: getAlert)
     }
@@ -68,7 +67,7 @@ struct AddView: View {
     
     func textIsAppropriate() -> Bool {
         if textFieldText.count < 3 {
-            alertTitle = "Your new todo item must be at least 3 characters long! 😱"
+            alertTitle = "Your new pill must be at least 3 characters long! 😱"
             showAlert.toggle()
             return false
         }
@@ -80,10 +79,10 @@ struct AddView: View {
     }
 }
 
-struct AddView_Previews: PreviewProvider {
+struct AddPills_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AddView()
+            AddPills()
         }
         .environmentObject(ListViewModel())
     }
