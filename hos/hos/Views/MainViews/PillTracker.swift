@@ -12,7 +12,7 @@ struct PillTracker: View {
     
     let accentGreyDark = Color("AccentGreyDark")
     
-    var takenPills: [ItemModel] {
+    var takenPills: [PillModel] {
         listViewModel.items.filter { $0.isInCabinet && $0.hasBeenTaken}
     }
     

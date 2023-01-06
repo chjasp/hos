@@ -1,6 +1,6 @@
 import Foundation
 
-struct ItemModel: Identifiable, Codable {
+struct PillModel: Identifiable, Codable {
     
     let id: String
     let title: String
@@ -14,12 +14,12 @@ struct ItemModel: Identifiable, Codable {
         self.hasBeenTaken = hasBeenTaken
     }
     
-    func updateCabinet() -> ItemModel {
-        return ItemModel(id: id, title: title, isInCabinet: !isInCabinet, hasBeenTaken: hasBeenTaken)
+    func updateCabinet() -> PillModel {
+        return PillModel(id: id, title: title, isInCabinet: !isInCabinet, hasBeenTaken: hasBeenTaken)
     }
     
-    func updateTakingPill() -> ItemModel {
-        return ItemModel(id: id, title: title, isInCabinet: isInCabinet, hasBeenTaken: !hasBeenTaken)
+    func updateTakingPill() -> PillModel {
+        return PillModel(id: id, title: title, isInCabinet: isInCabinet, hasBeenTaken: !hasBeenTaken)
     }
     
 }
