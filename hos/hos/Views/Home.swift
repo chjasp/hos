@@ -6,22 +6,32 @@ struct Home: View {
     let accentGreen = Color("AccentGreen")
     let accentGreyDark = Color("AccentGreyDark")
     let backgroundGrey = Color("BackgroundGrey")
+    let accentColor = Color("AccentColor")
+    let secondaryAccentColor = Color("SecondaryAccentColor")
     
     var body: some View {
         VStack {
             HStack {
-                Button {
-                // ListView()
-                } label: {
-                    Image(systemName: "slider.vertical.3")
+                
+                NavigationLink(destination: Cabinet(),
+                               label: {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
                         .font(.title2)
-                }
+                        .foregroundColor(accentColor)
+                })
                 
                 Spacer()
+                
+                
+                    NavigationLink(destination: Pharmacy(),
+                                   label: {
+                        Image(systemName: "pills")
+                            .font(.title2)
+                            .foregroundColor(accentColor)
+                    })
 
             }
             .padding()
-            .foregroundColor(Color.accentColor)
             
             Text("Mirror")
                 .font(.system(size: 30, weight: .bold))

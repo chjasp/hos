@@ -9,16 +9,16 @@ struct NoPills: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("There are no pills")
+                Text("No Pills in Pharmacy")
                     .font(.title)
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
-                Text("Add pills to your cabinet. You can also create new pills or delete ones you don't need.")
+                Text("Add pills to your pharmacy. The pills in the pharmacy can then be added to your personal cabinet.")
                     .foregroundColor(.white)
                     .padding(.bottom, 20)
                 NavigationLink(destination: AddPills(),
                                label: {
-                    Text("Add Something")
+                    Text("Add Pills")
                         .foregroundColor(backgroundGrey)
                         .font(.headline)
                         .frame(height: 55)
@@ -60,7 +60,7 @@ struct NoPills_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             NoPills()
-                .navigationTitle("Title")
+                .navigationTitle("Pharmacy⚕️")
         }
     }
 }

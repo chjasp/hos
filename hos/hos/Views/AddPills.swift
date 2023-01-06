@@ -18,7 +18,6 @@ struct AddPills: View {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
-    
     var body: some View {
         ScrollView {
             VStack {
