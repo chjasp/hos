@@ -30,11 +30,11 @@ struct Cabinet: View {
     let backgroundGrey = Color("BackgroundGrey")
     let secondaryAccentColor = Color("SecondaryAccentColor")
     
-    var openPills: [ItemModel] {
+    var openPills: [PillModel] {
         listViewModel.items.filter { $0.isInCabinet && !$0.hasBeenTaken}
     }
     
-    var takenPills: [ItemModel] {
+    var takenPills: [PillModel] {
         listViewModel.items.filter { $0.isInCabinet && $0.hasBeenTaken}
     }
     

@@ -7,10 +7,11 @@ struct hosApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            HealthHome()
+            /*NavigationView {
                 Home()
             }
-            .environmentObject(listViewModel)
+            .environmentObject(listViewModel)*/
         }
     }
 }

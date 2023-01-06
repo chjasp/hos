@@ -23,11 +23,11 @@ struct Pharmacy: View {
     let accentColor = Color("AccentColor")
     let backgroundGrey = Color("BackgroundGrey")
     
-    var cabinetPills: [ItemModel] {
+    var cabinetPills: [PillModel] {
         listViewModel.items.filter { $0.isInCabinet }
     }
     
-    var otherPills: [ItemModel] {
+    var otherPills: [PillModel] {
         listViewModel.items.filter { !$0.isInCabinet }
     }
     

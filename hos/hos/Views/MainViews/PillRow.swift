@@ -7,7 +7,7 @@ import SwiftUI
  */
 struct PillRow: View {
     
-    let item: ItemModel
+    let item: PillModel
     let usedInCabinet: Bool
     let accentRed = Color("AccentRed")
     let accentGreen = Color("AccentGreen")
@@ -31,10 +31,10 @@ struct PillRow: View {
 
 struct PillRow_Previews: PreviewProvider {
     
-    static var item1 = ItemModel(title: "first item", isInCabinet: false, hasBeenTaken: false)
-    static var item2 = ItemModel(title: "second iten", isInCabinet: true, hasBeenTaken: true)
-    static var item3 = ItemModel(title: "third iten", isInCabinet: true, hasBeenTaken: false)
-    static var item4 = ItemModel(title: "fourth iten", isInCabinet: true, hasBeenTaken: true)
+    static var item1 = PillModel(title: "first item", isInCabinet: false, hasBeenTaken: false)
+    static var item2 = PillModel(title: "second iten", isInCabinet: true, hasBeenTaken: true)
+    static var item3 = PillModel(title: "third iten", isInCabinet: true, hasBeenTaken: false)
+    static var item4 = PillModel(title: "fourth iten", isInCabinet: true, hasBeenTaken: true)
     
     static var previews: some View {
         Group {
