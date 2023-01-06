@@ -1,8 +1,12 @@
 import SwiftUI
 
 
+/*
+ Handle adding pills to the pharmacy
+ */
 struct AddPills: View {
     
+    // TBD: Can following line be deleted?
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var listViewModel: ListViewModel
     
@@ -10,11 +14,11 @@ struct AddPills: View {
     @State var alertTitle: String = ""
     @State var showAlert: Bool = false
     
-    let secondaryAccentColor = Color("SecondaryAccentColor")
     let accentGrey = Color("AccentGrey")
     let backgroundGrey = Color("BackgroundGrey")
     
     init() {
+        // TBD: Seems to be only way to set navigation title's color to white. Don't like it.
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     

@@ -1,18 +1,22 @@
 import SwiftUI
 
+
+/*
+ (1) Plot data
+ (2) Handle time horizons
+ */
 struct LineGraph: View {
-    
-    let accentGrey = Color("AccentGrey")
-    let accentGreen = Color("AccentGreen")
-    let accentGreyDark = Color("AccentGreyDark")
-    let backgroundGrey = Color("BackgroundGrey")
-    
+      
     var data: [CGFloat]
     
     @State var currentPlot = ""
     @State var offset: CGSize = .zero
     @State var showPlot = false
     @State var translation: CGFloat = 0
+    
+    let accentGreen = Color("AccentGreen")
+    let accentGreyDark = Color("AccentGreyDark")
+    let backgroundGrey = Color("BackgroundGrey")
     
     var body: some View {
         
@@ -92,8 +96,6 @@ struct LineGraph: View {
                 withAnimation { showPlot = true }
                 
                 let translation = value.location.x - 40
-                
-                // Getting index
                 let index = max(min(Int((translation / width).rounded() + 1), data.count - 1), 0)
                 
                 currentPlot = "\(data[index])"
@@ -119,6 +121,9 @@ struct LineGraph: View {
 
 struct LineGraph_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        NavigationView {
+            Home()
+        }
+        .environmentObject(ListViewModel())
     }
 }

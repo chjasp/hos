@@ -1,50 +1,40 @@
 import SwiftUI
 
+
+/*
+ (1) Display chart and cabinet
+ (2) Serve as central navigation node
+ */
 struct Home: View {
     
-    let accentGrey = Color("AccentGrey")
-    let accentGreen = Color("AccentGreen")
+    @EnvironmentObject var listViewModel: ListViewModel
+    
     let accentGreyDark = Color("AccentGreyDark")
     let backgroundGrey = Color("BackgroundGrey")
     let accentColor = Color("AccentColor")
-    let secondaryAccentColor = Color("SecondaryAccentColor")
     
     var body: some View {
         VStack {
             HStack {
-                
-                NavigationLink(destination: Cabinet(),
+                NavigationLink(destination: ChartSettings(),
                                label: {
                     Image(systemName: "chart.line.uptrend.xyaxis")
                         .font(.title2)
                         .foregroundColor(accentColor)
                 })
-                
                 Spacer()
-                
-                
                     NavigationLink(destination: Pharmacy(),
                                    label: {
                         Image(systemName: "pills")
                             .font(.title2)
                             .foregroundColor(accentColor)
                     })
-
             }
             .padding()
-            
-            Text("Mirror")
-                .font(.system(size: 30, weight: .bold))
-                .foregroundColor(Color.accentColor)
-                .padding(.bottom, 2)
-            
-            Button {
-                
-            } label: {
-                
+            Button {} label: {
+    
                 HStack(spacing: 5) {
                     Text("Week")
-                    
                     Image(systemName: "chevron.down")
                 }
                 .padding(.vertical, 5)
@@ -57,17 +47,25 @@ struct Home: View {
                         x: 0,
                         y: 3)
             }
+            
             LineGraph(data: samplePlot)
                 .frame(width: 360, height: 250)
                 .shadow(color: .black,
-                        radius: 10,
+                        radius: 8,
                         x: 0.0,
-                        y: 10)
+                        y: 8)
                 .padding(.top, 10)
+                .padding(.bottom, 12)
+            
+            PillTracker()
+                .cornerRadius(10)
+                .shadow(color: .black,
+                        radius: 8,
+                        x: 0.0,
+                        y: 4)
                 .padding(.bottom, 15)
             
             Cabinet()
-            .environmentObject(ListViewModel())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(backgroundGrey)
@@ -76,7 +74,10 @@ struct Home: View {
 
 struct Home_Preview: PreviewProvider {
     static var previews: some View {
-        Home()
+        NavigationView {
+            Home()
+        }
+        .environmentObject(ListViewModel())
     }
 }
 

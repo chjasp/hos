@@ -27,10 +27,6 @@ class ListViewModel: ObservableObject {
         items.remove(atOffsets: indexSet)
     }
     
-    func moveItem(from: IndexSet, to: Int) {
-        items.move(fromOffsets: from, toOffset: to)
-    }
-    
     func addItem(title: String) {
         let newItem = ItemModel(title: title, isInCabinet: false, hasBeenTaken: false)
         items.append(newItem)

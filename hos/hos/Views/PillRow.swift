@@ -1,6 +1,11 @@
 import SwiftUI
 
-struct PharmacyRow: View {
+
+/*
+ (1) Model the basic design of a pill item
+ (2) Handle animations; esp. on-tab animations
+ */
+struct PillRow: View {
     
     let item: ItemModel
     let usedInCabinet: Bool
@@ -23,7 +28,8 @@ struct PharmacyRow: View {
     }
 }
 
-struct PharmacyRow_Previews: PreviewProvider {
+
+struct PillRow_Previews: PreviewProvider {
     
     static var item1 = ItemModel(title: "first item", isInCabinet: false, hasBeenTaken: false)
     static var item2 = ItemModel(title: "second iten", isInCabinet: true, hasBeenTaken: true)
@@ -32,10 +38,10 @@ struct PharmacyRow_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            PharmacyRow(item: item1, usedInCabinet: false)
-            PharmacyRow(item: item2, usedInCabinet: false)
-            PharmacyRow(item: item3, usedInCabinet: true)
-            PharmacyRow(item: item4, usedInCabinet: true)
+            PillRow(item: item1, usedInCabinet: false)
+            PillRow(item: item2, usedInCabinet: false)
+            PillRow(item: item3, usedInCabinet: true)
+            PillRow(item: item4, usedInCabinet: true)
         }
         .previewLayout(.sizeThatFits)
     }

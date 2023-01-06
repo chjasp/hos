@@ -1,23 +1,26 @@
 import SwiftUI
 import UIKit
 
+
+/*
+ List sections in pharmacy
+*/
 enum Sections: String, CaseIterable {
     case cabinet = "Cabinet Pills"
     case notCabinet = "Other Pills"
 }
 
+
+/*
+ (1) Contains all pills
+ (2) Manages assignment of pills to cabinet
+ (3) Manages creation or deletion of pills
+ */
 struct Pharmacy: View {
-    
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-    }
     
     @EnvironmentObject var listViewModel: ListViewModel
     
-    
-    let accentGrey = Color("AccentGrey")
-    let accentGreen = Color("AccentGreen")
-    let accentGreyDark = Color("AccentGreyDark")
+    let accentColor = Color("AccentColor")
     let backgroundGrey = Color("BackgroundGrey")
     
     var cabinetPills: [ItemModel] {
@@ -35,21 +38,19 @@ struct Pharmacy: View {
                 NoPills()
             } else {
                 List {
-                    
                     ForEach(Sections.allCases, id: \.self) { section in
-                        
                         Section {
                             
                             let filteredPills = section == .cabinet ? cabinetPills : otherPills
                             
-                            
                             ForEach(filteredPills) { item in
-                                PharmacyRow(item: item, usedInCabinet: false)
-                                    .onTapGesture {
-                                        withAnimation(.linear) {
-                                            listViewModel.updateCabinet(item: item)
+
+                                    PillRow(item: item, usedInCabinet: false)
+                                        .onTapGesture {
+                                            withAnimation(.linear) {
+                                                listViewModel.updateCabinet(item: item)
+                                            }
                                         }
-                                    }
                                     .listRowInsets(EdgeInsets())
                                     .listRowSeparator(.hidden)
                                     .listRowBackground(Color.clear)
@@ -63,11 +64,10 @@ struct Pharmacy: View {
                                 
                             }
                             .onDelete(perform: listViewModel.deleteItem)
-                            .background(.clear)
                             
                         } header: {
                             Text(section.rawValue)
-                                .foregroundColor(Color.accentColor)
+                                .foregroundColor(accentColor)
                         }
                     }
                 }
@@ -76,6 +76,7 @@ struct Pharmacy: View {
             }
         }
         .navigationBarItems(trailing: NavigationLink("Add", destination: AddPills()))
+        .navigationTitle("Pharmacy")
     }
 }
 
