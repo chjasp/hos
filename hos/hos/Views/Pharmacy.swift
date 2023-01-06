@@ -44,7 +44,7 @@ struct Pharmacy: View {
                             
                             
                             ForEach(filteredPills) { item in
-                                PharmacyRow(item: item)
+                                PharmacyRow(item: item, usedInCabinet: false)
                                     .onTapGesture {
                                         withAnimation(.linear) {
                                             listViewModel.updateCabinet(item: item)
@@ -62,6 +62,7 @@ struct Pharmacy: View {
                                             y: 6)
                                 
                             }
+                            .onDelete(perform: listViewModel.deleteItem)
                             .background(.clear)
                             
                         } header: {
