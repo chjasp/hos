@@ -1,8 +1,15 @@
 import SwiftUI
 
+
+/*
+ Handle case when no pills are present in pharmacy.
+ Should never happen in production.
+ Exception: The user deleted all available pills.
+ */
 struct NoPills: View {
     
     @State var animate: Bool = false
+    
     let secondaryAccentColor = Color("SecondaryAccentColor")
     let backgroundGrey = Color("BackgroundGrey")
     
@@ -60,7 +67,7 @@ struct NoPills_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             NoPills()
-                .navigationTitle("Pharmacy⚕️")
+                .navigationTitle("Pharmacy")
         }
     }
 }

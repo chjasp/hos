@@ -11,8 +11,11 @@
 		CD116EF429633EBA00270467 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD116EF329633EBA00270467 /* Home.swift */; };
 		CD116EF629636B6400270467 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD116EF529636B6400270467 /* LineGraph.swift */; };
 		CD3C0C91295E4130008C4AE5 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C0C90295E4130008C4AE5 /* ItemModel.swift */; };
+		CD5871E529688C7000E2CBCE /* ChartSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871E429688C7000E2CBCE /* ChartSettings.swift */; };
+		CD5871E729688ECC00E2CBCE /* FillCabinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871E629688ECC00E2CBCE /* FillCabinet.swift */; };
 		CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */; };
 		CD5D5BF22960813300B73C6C /* NoPills.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BF12960813300B73C6C /* NoPills.swift */; };
+		CD8C2D71296876E600974F3A /* PillTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C2D70296876E600974F3A /* PillTracker.swift */; };
 		CDA177FA2967643C00E71EAB /* PillAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA177F92967643C00E71EAB /* PillAnimation.swift */; };
 		CDB55718295B0050003B4549 /* hosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55717295B0050003B4549 /* hosApp.swift */; };
 		CDB5571A295B0050003B4549 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55719295B0050003B4549 /* ContentView.swift */; };
@@ -21,7 +24,7 @@
 		CDB55726295B00AA003B4549 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55725295B00AA003B4549 /* HealthStore.swift */; };
 		CDB5572A295B109B003B4549 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB55729295B109B003B4549 /* HealthKit.framework */; };
 		CDF5B685295C52C700DD8A61 /* Pharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B684295C52C700DD8A61 /* Pharmacy.swift */; };
-		CDF5B688295C546F00DD8A61 /* PharmacyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B687295C546F00DD8A61 /* PharmacyRow.swift */; };
+		CDF5B688295C546F00DD8A61 /* PillRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B687295C546F00DD8A61 /* PillRow.swift */; };
 		CDF5B68A295C560300DD8A61 /* AddPills.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5B689295C560300DD8A61 /* AddPills.swift */; };
 		CDF853C2295B238A00D1D3C0 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF853C1295B238A00D1D3C0 /* Step.swift */; };
 /* End PBXBuildFile section */
@@ -31,8 +34,11 @@
 		CD116EF329633EBA00270467 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CD116EF529636B6400270467 /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		CD3C0C90295E4130008C4AE5 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		CD5871E429688C7000E2CBCE /* ChartSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSettings.swift; sourceTree = "<group>"; };
+		CD5871E629688ECC00E2CBCE /* FillCabinet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillCabinet.swift; sourceTree = "<group>"; };
 		CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		CD5D5BF12960813300B73C6C /* NoPills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPills.swift; sourceTree = "<group>"; };
+		CD8C2D70296876E600974F3A /* PillTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillTracker.swift; sourceTree = "<group>"; };
 		CDA177F92967643C00E71EAB /* PillAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillAnimation.swift; sourceTree = "<group>"; };
 		CDB55714295B0050003B4549 /* hos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB55717295B0050003B4549 /* hosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hosApp.swift; sourceTree = "<group>"; };
@@ -43,7 +49,7 @@
 		CDB55727295B109B003B4549 /* hos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hos.entitlements; sourceTree = "<group>"; };
 		CDB55729295B109B003B4549 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		CDF5B684295C52C700DD8A61 /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
-		CDF5B687295C546F00DD8A61 /* PharmacyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyRow.swift; sourceTree = "<group>"; };
+		CDF5B687295C546F00DD8A61 /* PillRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillRow.swift; sourceTree = "<group>"; };
 		CDF5B689295C560300DD8A61 /* AddPills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPills.swift; sourceTree = "<group>"; };
 		CDF853C1295B238A00D1D3C0 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,12 +136,15 @@
 			isa = PBXGroup;
 			children = (
 				CDF5B684295C52C700DD8A61 /* Pharmacy.swift */,
-				CDF5B687295C546F00DD8A61 /* PharmacyRow.swift */,
+				CDF5B687295C546F00DD8A61 /* PillRow.swift */,
 				CDF5B689295C560300DD8A61 /* AddPills.swift */,
 				CD5D5BF12960813300B73C6C /* NoPills.swift */,
 				CD116EF129633CB600270467 /* Cabinet.swift */,
 				CD116EF329633EBA00270467 /* Home.swift */,
 				CD116EF529636B6400270467 /* LineGraph.swift */,
+				CD8C2D70296876E600974F3A /* PillTracker.swift */,
+				CD5871E429688C7000E2CBCE /* ChartSettings.swift */,
+				CD5871E629688ECC00E2CBCE /* FillCabinet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,12 +244,15 @@
 				CDA177FA2967643C00E71EAB /* PillAnimation.swift in Sources */,
 				CD5D5BF22960813300B73C6C /* NoPills.swift in Sources */,
 				CDF5B685295C52C700DD8A61 /* Pharmacy.swift in Sources */,
+				CD8C2D71296876E600974F3A /* PillTracker.swift in Sources */,
 				CD116EF629636B6400270467 /* LineGraph.swift in Sources */,
+				CD5871E529688C7000E2CBCE /* ChartSettings.swift in Sources */,
 				CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */,
 				CDB55726295B00AA003B4549 /* HealthStore.swift in Sources */,
 				CD116EF229633CB600270467 /* Cabinet.swift in Sources */,
 				CDB55718295B0050003B4549 /* hosApp.swift in Sources */,
-				CDF5B688295C546F00DD8A61 /* PharmacyRow.swift in Sources */,
+				CDF5B688295C546F00DD8A61 /* PillRow.swift in Sources */,
+				CD5871E729688ECC00E2CBCE /* FillCabinet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
