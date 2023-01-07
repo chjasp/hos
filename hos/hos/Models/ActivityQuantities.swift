@@ -5,3 +5,9 @@ struct Step: Identifiable {
     let count: Int
     let date: Date
 }
+
+struct HeartRate: Identifiable {
+    let id = UUID()
+    let bpm: Int
+    let date: Date
+}

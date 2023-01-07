@@ -31,10 +31,10 @@ struct PillRow: View {
 
 struct PillRow_Previews: PreviewProvider {
     
-    static var item1 = PillModel(title: "first item", isInCabinet: false, hasBeenTaken: false)
-    static var item2 = PillModel(title: "second iten", isInCabinet: true, hasBeenTaken: true)
-    static var item3 = PillModel(title: "third iten", isInCabinet: true, hasBeenTaken: false)
-    static var item4 = PillModel(title: "fourth iten", isInCabinet: true, hasBeenTaken: true)
+    static var item1 = PillModel(title: "first item", isInCabinet: false, hasBeenTaken: false, tookOnDates: [])
+    static var item2 = PillModel(title: "second iten", isInCabinet: true, hasBeenTaken: true, tookOnDates: [])
+    static var item3 = PillModel(title: "third iten", isInCabinet: true, hasBeenTaken: false, tookOnDates: [])
+    static var item4 = PillModel(title: "fourth iten", isInCabinet: true, hasBeenTaken: true, tookOnDates: [])
     
     static var previews: some View {
         Group {
