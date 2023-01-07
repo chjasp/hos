@@ -16,9 +16,11 @@
 		CD5871EB29689F9200E2CBCE /* HealthHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871EA29689F9200E2CBCE /* HealthHome.swift */; };
 		CD5871ED29689FC600E2CBCE /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871EC29689FC600E2CBCE /* HealthStore.swift */; };
 		CD5871EF2968A56900E2CBCE /* HealthExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871EE2968A56900E2CBCE /* HealthExtensions.swift */; };
-		CD5871F12968B4BD00E2CBCE /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871F02968B4BD00E2CBCE /* Step.swift */; };
+		CD5871F12968B4BD00E2CBCE /* ActivityQuantities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871F02968B4BD00E2CBCE /* ActivityQuantities.swift */; };
+		CD5871F32968B7E600E2CBCE /* LineGraphHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5871F22968B7E600E2CBCE /* LineGraphHealth.swift */; };
 		CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */; };
 		CD5D5BF22960813300B73C6C /* NoPills.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5D5BF12960813300B73C6C /* NoPills.swift */; };
+		CD7072602969A8B8007193C1 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70725F2969A8B8007193C1 /* Activity.swift */; };
 		CD8C2D71296876E600974F3A /* PillTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C2D70296876E600974F3A /* PillTracker.swift */; };
 		CDA177FA2967643C00E71EAB /* PillAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA177F92967643C00E71EAB /* PillAnimation.swift */; };
 		CDB55718295B0050003B4549 /* hosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB55717295B0050003B4549 /* hosApp.swift */; };
@@ -40,9 +42,11 @@
 		CD5871EA29689F9200E2CBCE /* HealthHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHome.swift; sourceTree = "<group>"; };
 		CD5871EC29689FC600E2CBCE /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		CD5871EE2968A56900E2CBCE /* HealthExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthExtensions.swift; sourceTree = "<group>"; };
-		CD5871F02968B4BD00E2CBCE /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		CD5871F02968B4BD00E2CBCE /* ActivityQuantities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityQuantities.swift; sourceTree = "<group>"; };
+		CD5871F22968B7E600E2CBCE /* LineGraphHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphHealth.swift; sourceTree = "<group>"; };
 		CD5D5BEF295EF1B600B73C6C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		CD5D5BF12960813300B73C6C /* NoPills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPills.swift; sourceTree = "<group>"; };
+		CD70725F2969A8B8007193C1 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		CD8C2D70296876E600974F3A /* PillTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillTracker.swift; sourceTree = "<group>"; };
 		CDA177F92967643C00E71EAB /* PillAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillAnimation.swift; sourceTree = "<group>"; };
 		CDB55714295B0050003B4549 /* hos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +78,8 @@
 				CD3C0C90295E4130008C4AE5 /* PillModel.swift */,
 				CD5871EC29689FC600E2CBCE /* HealthStore.swift */,
 				CD5871EE2968A56900E2CBCE /* HealthExtensions.swift */,
-				CD5871F02968B4BD00E2CBCE /* Step.swift */,
+				CD5871F02968B4BD00E2CBCE /* ActivityQuantities.swift */,
+				CD70725F2969A8B8007193C1 /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				CD5871EA29689F9200E2CBCE /* HealthHome.swift */,
+				CD5871F22968B7E600E2CBCE /* LineGraphHealth.swift */,
 			);
 			path = HealthKitViews;
 			sourceTree = "<group>";
@@ -256,9 +262,11 @@
 				CD5D5BF22960813300B73C6C /* NoPills.swift in Sources */,
 				CDF5B685295C52C700DD8A61 /* Pharmacy.swift in Sources */,
 				CD8C2D71296876E600974F3A /* PillTracker.swift in Sources */,
+				CD5871F32968B7E600E2CBCE /* LineGraphHealth.swift in Sources */,
+				CD7072602969A8B8007193C1 /* Activity.swift in Sources */,
 				CD116EF629636B6400270467 /* LineGraph.swift in Sources */,
 				CD5871E529688C7000E2CBCE /* ChartSettings.swift in Sources */,
-				CD5871F12968B4BD00E2CBCE /* Step.swift in Sources */,
+				CD5871F12968B4BD00E2CBCE /* ActivityQuantities.swift in Sources */,
 				CD5D5BF0295EF1B600B73C6C /* ListViewModel.swift in Sources */,
 				CD116EF229633CB600270467 /* Cabinet.swift in Sources */,
 				CD5871EB29689F9200E2CBCE /* HealthHome.swift in Sources */,

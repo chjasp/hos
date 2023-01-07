@@ -5,7 +5,7 @@ import SwiftUI
  (1) Plot data
  (2) Handle time horizons
  */
-struct LineGraph: View {
+struct LineGraphHealth: View {
       
     var data: [CGFloat]
     
@@ -62,6 +62,7 @@ struct LineGraph: View {
                         .background(accentGreen, in: Capsule())
                         .offset(x: translation < 10 ? 30 : 0)
                         .offset(x: translation > (proxy.size.width - 60) ? -30 : 0)
+                        // TBD: Generalize for more ranges
                         .offset(y: offset.height < -180 ? 10 : 0)
                    
                     Rectangle()
@@ -120,11 +121,20 @@ struct LineGraph: View {
     }
 }
 
-struct LineGraph_Previews: PreviewProvider {
+struct LineGraphHealth_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            Home()
-        }
-        .environmentObject(ListViewModel())
+        LineGraphHealth(data: samplePlot2)
+            .frame(width: 300, height: 250)
+            .shadow(color: .black,
+                    radius: 8,
+                    x: 0.0,
+                    y: 8)
+            .padding(.top, 10)
+            .padding(.bottom, 12)
     }
 }
+
+let samplePlot2: [CGFloat] = [
+    200, 300, 560, 673, 456, 500, 643, 746, 735, 800, 810, 846, 666, 840, 888, 890, 900, 840, 820, 888, 889
+]
+

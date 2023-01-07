@@ -25,6 +25,8 @@ class HealthStore {
         // TBD: Extend to other types of health data
         let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
         
+        let hrType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        
         // Guard non-initialized healthstore
         guard let healthStore = self.healthStore else {
             return completion(false)
@@ -33,7 +35,7 @@ class HealthStore {
         // Handle failed and successful requests
         // Remark from video: We should call requestAuthorization from content view
         // Make sure info.plist-equivalent information and entitlements are provided
-        healthStore.requestAuthorization(toShare: [], read: [stepType]) {
+        healthStore.requestAuthorization(toShare: [], read: [stepType, hrType]) {
             (success, error) in completion(success)
         }
     }
@@ -56,6 +58,62 @@ class HealthStore {
         
         query = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
         
+        query!.initialResultsHandler = { query, statisticsCollection, error in
+            completion(statisticsCollection)
+        }
+        
+        if let healthStore = healthStore, let query = self.query {
+            healthStore.execute(query)
+        }
+    }
+    
+    // Function to retrieve the resting heart reate from time range
+    // We should call this in the contentView when we are authorized
+    func calculateRHR(completion: @escaping (HKStatisticsCollection?) -> Void) {
+        
+        let quantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        
+        // Go back seven days from now ("A week ago")
+        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+        // Anchor data/Anchor time: When does the date actually start?
+        let anchorDate = Date.monday12AM()
+        let daily = DateComponents(day: 1)
+        //
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+        
+        query = HKStatisticsCollectionQuery(quantityType: quantityType, quantitySamplePredicate: predicate, options: .discreteMin, anchorDate: anchorDate, intervalComponents: daily)
+        
+        query!.initialResultsHandler = { query, statisticsCollection, error in
+            completion(statisticsCollection)
+        }
+        
+        if let healthStore = healthStore, let query = self.query {
+            healthStore.execute(query)
+        }
+    }
+    
+    // Function to retrieve the resting heart reate from time range
+    // We should call this in the contentView when we are authorized
+    func calculateSleep(completion: @escaping (HKStatisticsCollection?) -> Void) {
+        
+        let sleepType = HKCategoryType(.sleepAnalysis)
+        
+        // Go back seven days from now ("A week ago")
+        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+        
+        let allAsleepPredicate: HKCategoryValueSleepAnalysis
+        // Predicate for all asleep samples (unspecified, core, deep, REM)
+        if #available(iOS 16.0, *) {
+            allAsleepPredicate = HKCategoryValueSleepAnalysis.asleepUnspecified
+        } else {
+            allAsleepPredicate = HKCategoryValueSleepAnalysis.asleep
+        }
+        
+        let dateRangePredicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+        
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [dateRangePredicate, allAsleepPredicate])
+        
+        let query = HKSampleQuery(sampleType: sleepType, predicate: predicate)
         query!.initialResultsHandler = { query, statisticsCollection, error in
             completion(statisticsCollection)
         }

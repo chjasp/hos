@@ -28,7 +28,7 @@ class ListViewModel: ObservableObject {
     }
     
     func addItem(title: String) {
-        let newItem = PillModel(title: title, isInCabinet: false, hasBeenTaken: false)
+        let newItem = PillModel(title: title, isInCabinet: false, hasBeenTaken: false, tookOnDates: [])
         items.append(newItem)
     }
     

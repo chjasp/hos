@@ -29,13 +29,17 @@ struct HealthHome: View {
     
     var body: some View {
         
-        List(steps, id: \.id) { step in
-            VStack {
-                Text("\(step.count)")
-                Text(step.date, style: .date)
-                    .opacity(0.5)
-            }
-            
+        VStack {
+            LineGraphHealth(data: steps.map({ step in
+                CGFloat(step.count)
+            }))
+            .frame(width: 300, height: 250)
+            .shadow(color: .black,
+                    radius: 8,
+                    x: 0.0,
+                    y: 8)
+            .padding(.top, 10)
+            .padding(.bottom, 12)
         }
         
         .onAppear {
@@ -51,6 +55,7 @@ struct HealthHome: View {
                 }
             }
         }
+        .background(.white)
     }
 }
 
