@@ -101,13 +101,15 @@ class HealthStore {
         // Go back seven days from now ("A week ago")
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
         
-        let allAsleepPredicate: HKCategoryValueSleepAnalysis
+        let allAsleepPredicate: NSPredicate
+        
         // Predicate for all asleep samples (unspecified, core, deep, REM)
         if #available(iOS 16.0, *) {
-            allAsleepPredicate = HKCategoryValueSleepAnalysis.asleepUnspecified
+            allAsleepPredicate = HKCategoryValueSleepAnalysis.predicateForSamples(equalTo: HKCategoryValueSleepAnalysis.allAsleepValues)
         } else {
-            allAsleepPredicate = HKCategoryValueSleepAnalysis.asleep
-        }
+            allAsleepPredicate = HKQuery.predicateForCategorySamples(
+                with: .equalTo,
+                value: HKCategoryValueSleepAnalysis.asleep.rawValue)
         
         let dateRangePredicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
         
